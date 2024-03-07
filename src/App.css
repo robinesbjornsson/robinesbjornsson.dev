@@ -1,38 +1,31 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes morph {
+  0%, 100% {
+    border-radius: 50%;
+  }
+  25% {
+    border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+  }
+  50% {
+    border-radius: 30% 70% 70% 30% / 70% 30% 70% 30%;
+  }
+  75% {
+    border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.profileImage {
+  width: 300px;
+  height: auto; /* Adjust as needed if you want a fixed height */
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  animation: morph 8s infinite ease-in-out;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  border: 3px solid black; /* Adjust the border color and size as needed */
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* If you are using an actual image element inside .profileImage, add a class to it */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
